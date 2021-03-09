@@ -1,0 +1,39 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{pdfpages}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotsset{compat=1.8}
+\pgfplotstableread{ % Read the data into a table macro
+Label   Inactive Unemployed Part-time Full-time Self-employed
+White   23.24       4.74      15.79      46.84       9.40
+Black   28.74       9.94      13.63      42.23       5.46
+Chinese 37.37       4.59      12.56      34.98      10.50
+Asian   36.31       6.60      11.74      36.04       9.30 
+Mixed   29.48       8.69      14.95      40.20       6.69
+}\testdata
+
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+            xbar stacked,   % Stacked horizontal bars
+            xmin=0,         % Start x axis at 0
+            xmax=100,
+            ytick=data,     % Use as many tick labels as y coordinates
+            %legend pos=south east,
+            yticklabels from table={\testdata}{Label},  % Get the labels from the Label column of the \datatable
+            legend style={at={(0.5,-0.2)},anchor=north},
+            xlabel = Percentage (\%),
+            xmajorgrids=true
+]
+\addplot [fill=cyan!20!green!40] table [x=Inactive, meta=Label,y expr=\coordindex] {\testdata};   % "First" column against the data index
+\addplot [fill=black!10] table [x=Unemployed, meta=Label,y expr=\coordindex] {\testdata};
+\addplot [fill=cyan!10] table [x=Part-time, meta=Label,y expr=\coordindex] {\testdata};
+\addplot [fill=red!10] table [x=Full-time, meta=Label,y expr=\coordindex] {\testdata};
+\addplot [fill=yellow!10] table [x=Self-employed, meta=Label,y expr=\coordindex] {\testdata};
+\legend{Inactive, Unemployed, Part-time, Full-time, Self-employed}
+\end{axis}
+\end{tikzpicture}
+\end{document}

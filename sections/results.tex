@@ -1,0 +1,134 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{pdfpages}
+\begin{document}
+\section{Setup}
+\label{sec:Setup}
+\textcolor{red}{make sure that other qualifications are incorporated in the model. how?? If put as GCSEs then this will be measurement error (attenuation bias?) and be picked up within the \enquote{unexplained} part - but how much?}
+\subsection{Model}
+\label{sec:Model}
+To begin the regression analysis, the wage equation will be estimated using an expanded Mincer equation \citep{MincerA}. Traditional explanatory variables have been used, along with a the following variables of interest: disability (binary), part time (binary), industry (1-digit SIC) and occupation (2-digit SOC), region of UK, public sector employment (binary), under 25 employees (binary) regional unemployment rate. The regional unemployment rate has been included due to its potential impact on wages \citep{Bell}. There are two reasons for this. Firstly, regional unemployment rates may have an effect on the ability of workers to negotiate higher wages and, secondly, it will help to mitigate the effects of any missing variables which are not time-invariant. \textcolor{red}{Existing literature has explore the theoretical and econometric impact of public sector employment and the firm size (\citet{Longhi} and \citet{Longhi3}), and these are both statistically significant in the model.} There are also theoretical reasons for why discrimination may vary by firm size and if it is public or private sector. Public firms may be vectors of institutional discrimination, whereas large firms (e.g. FTSE 100 listed) may be under greater pressure to not discriminate, and publish pay gaps. %add more here
+
+Due to the presence of heteroscedasticity in a linear-linear model, the log of hourly wages is preferred. Whilst taking the natural logarithm of the dependent variable  significantly reduces the test statistic, a Breusch-Pagan test for heteroscedasticity gives a p-value of 0.000. Consequently heteroscedasticity-robust standard errors are used throughout. \textcolor{red}{Autocorrelation or other tests??}
+
+\subsection{Blinder-Oaxaca Decompositions}
+\label{sec:B_O_Decomp}
+There are two reasons why wages may differ in the labour market. On the one hand, different individuals have different characteristics, such as experience, education and other wage-determining factors. These are what the literature terms \enquote{endowments} \citep{Blinder}. If we can successfully control for every factor relevant to determining one's wage, any remaining gap can be attributed to \enquote{unexplained} factors, which are often termed \enquote{coefficients}. This refers to the coefficients of the multiple linear regression model, which we assume differs between the two groups (e.g. White and Black). %also includes the interactions, depending on what the weighting matrix is??
+
+In order to analyse the level of the pay gap which can be attributed to \enquote{explained} and \enquote{unexplained} reasons, we need to take into account the different endowments possessed by the two groups. In a simple linear regression model, the wage gap (D) can be expressed as \citep{WB}:
+\begin{equation}
+  D = [\bar{x_{w}} - \bar{x_{b}}]\beta_{b} + [\beta_{w} - \beta_{b}]\bar{x_{b}}
+  \label{eq:1}
+\end{equation}
+We can attribute the first portion to the changes in the endowments (the \enquote{explained} part) and the second portion to the \enquote{unexplained} part (the coefficients and the interaction with endowments):
+\begin{equation}
+  D = [Explained] + [Unexplained]
+  \label{eq:2}
+\end{equation}
+
+\section{Decomposition Results}
+\label{sec:Decomposition Results}
+The results of the multiple linear regression version of the two-fold decomposition in Equation \label{eq:1} can be computer using Ben Jann's Stata Oaxaca-st0001 package \citep{Jann}. The full results are included in \hyperref[sec:appendixA]{Appendix A} in Tables \ref{tab:oaxaca_male} and \ref{tab:oaxaca_female}, with summary of the output included below.
+
+\textcolor{red}{Both tables begin with the average log hourly wage for group 1 and group 2. The pay gap between the two groups can be extracted intuitively, with negative numbers implying a negative contribution to earnings. non-Whites is a combined analysis of all ethnic groups, with the other decompositions providing a breakdown of the gap between White workers and the four other ethnic groupings.}
+
+\subsection{Males}
+\label{sec:Males}
+The first decomposition (non-White) in Table \ref{tab:oaxaca_male_summary} has a raw gap in log hourly wages of -0.103, meaning there is a statistically significant wage gap favouring Whites, among men. It is important to consider how much of this gap is present when we make like-for-like comparisons. Table \ref{tab:oaxaca_pct_male} shows half of this gap can be \enquote{explained} by differences in characteristics (endowments), with a significant proportion (49.1\%) left \enquote{unexplained} by the model. This can be thought of as discrimination, but only if the model fully captures all wage-determining characteristics. It was noted in Section \ref{sec:Setup} that this is more likely to affect women than men, however, any factors which disproportionately cause minority ethnic men to earn a lower wage relative to White men will be part of this \enquote{unexplained} component. For the remainder of this paper the \enquote{unexplained} component may be referred to as discrimination, with the caveat that this conclusion should be treated with caution.
+
+\setstretch{1.25}
+\import{tables/}{oaxaca_male_summary}
+\setstretch{2}
+
+We can specifically isolate \enquote{explained} and \enquote{unexplained} portions of the wage gap for each ethnic grouping. Table \ref{tab:oaxaca_male_summary} shows that the gap in male wages between Whites and every other ethnic group is negative statistically significant and negative, except for those of Chinese ethnicity. This may perhaps be due to the small sample size. These data are reported in percentages in Table \ref{tab:oaxaca_pct_male}, with 41.7\% of the Black wage gap \enquote{unexplained} by characteristics, and more than half \enquote{unexplained} for Asian minorities. Note that part of this may be due to issues discussed in Section \ref{sec:limitations}.
+
+\setstretch{1.25}
+\import{tables/}{oaxaca_pct_male}
+\setstretch{2}
+
+Returning again to Table \ref{tab:oaxaca_pct_male}, we can see that almost all of the mixed race pay gap can be \enquote{explained} by differences in endowments, with no statistically significant evidence of pay discrimination. These characteristics will be explored shortly. Chinese wages are not statistically different from the wages of White workers, so the differences cannot be split between the \enquote{explained} and \enquote{unexplained} portions. 
+
+\subsection{Females}
+\label{sec:Females}
+The story is very different for female workers. Turning to Table \ref{tab:oaxaca_female_summary}, we can see that White females actually earn less than non-White females (with a 0.0517 log hourly wage gap). The largest wage gap is for Chinese females at 0.107, with women in each ethnicity earning more than White women. Table \ref{tab:oaxaca_pct_female} shows that, for non-Whites, the positive wage gap is in spite of some \enquote{unexplained} downward pressure on their wage, with their endowments commanding an even larger wage gap than their White counterparts. However, there is variation between ethnicities. None of the wage gap for Black, Chinese or mixed race is due to pay discrimination, with \enquote{unexplained} components being statistically insignificant at the 5\% significance level. For Asian women, their positive wage gap is due to very favourable characteristics, despite strong evidence of pay discrimination, much more than could be due to factors explored in Section \ref{sec:limitations}. Note that whilst there is no evidence of pay discrimination within the female labour market, 
+
+\setstretch{1.25}
+\import{tables/}{oaxaca_female_summary}
+
+\import{tables/}{oaxaca_pct_female}
+\setstretch{2}
+
+It has been shown that labour market outcomes differ significantly for males and females. Male workers of ethnic minorities (other than Chinese) earn significantly less than White males, with some of this attributed to pay discrimination. In contrast, ethnic minority women typically earn more than their White counterparts, with no evidence of pay discrimination except for Asian women. However, this is not to say that there is not gender pay discrimination affecting women of all ethnic groupings, as discussed in Section \ref{sec:Wages}. This is consistent with the literature that ethnic wage gaps for females are much lower \textcolor{red}{(if not reversed??)} than males (see \citet{ONSe} and \citet{Longhi3} for UK and \citet{Bayard} for the US.) %move some of this to the conclusion??
+
+
+\section{Explained Differences}
+\label{sec:explained_diff}
+\subsection{Males}
+\label{sec:male_explained}
+Given that wage differentials can largely be explained, especially for females, discussing the factors contributing these is beneficial. Graphing the detailed results in Tables \ref{tab:oaxaca_male} and \ref{tab:oaxaca_female} from \hyperref[sec:appendixA]{Appendix A} gives Figures \ref{fig:explained_male_stacked} and \ref{fig:explained_female_stacked}, respectively. Whilst any \enquote{unexplained} components give some outright pay discrimination, this section on \enquote{explained} components includes a caveat that any \enquote{explained} parts of the wage gap \textcolor{red}{can also be attributed discrimination if they are endogenous}.
+
+\begin{figure}[h]
+\centering
+    \title{Explained Portion of Male Wage Differential}
+    \import{graphs/}{explained_male_stacked}
+    \caption{The portion of the log wage gap which is \enquote{explained} for males, by ethnic group}
+    \label{fig:explained_male_stacked}
+\end{figure}
+
+It was detailed above that Black, Asian and mixed race males typically receive a lower wage in part due to differences in endowments. Figure \ref{fig:explained_male_stacked} shows this is mainly due to them working in lower paid occupations/industries (particularly for Black males), along with the fact that they have been working in the UK for less than their White counterparts. For mixed race males, their lower wage is typically due to as mix of less years in the UK combined with less labour market experience and tenure with the current firm; this could possibly be due to an increased tendency to switch jobs more frequently compared to White males. Interestingly, this is all in spite of higher levels of education and working regions associated with higher pay, which make the overall \enquote{explained} wage gap smaller. Note that Chinese males have similar wages to White males primarily due to greater levels of education and jobs in higher occupations, which counteracts the fact that they have typically spent less years in the UK. Across all ethnicities males had higher levels of education than their White counterparts, with occupational clustering being most prevalent for Black males. \hyperref[sec:appendixB]{Appendix B} shows that ethnic minority males are more likely to work in education, health, and finance than White males, and less likely to work in agriculture, energy, and manufacturing.
+
+As noted previously, these \enquote{explained} components can themselves be a result of (Statistical) discrimination, as detailed in Section \ref{sec:Stat_discrim and signalling}. Occupational clustering evident in Black and Asian workers in particular could be due to a belief that higher paying occupations are more \enquote{more racist} or more likely to discriminate; lower levels of experience/tenure in mixed race workers could be due to workers quitting due to an experience of discrimination, for example. Further, whilst fewer years in the UK could mean that English language fluency is poorer, it could also be due to discrimination based upon a lack of \enquote{British} accent. Whilst this is not likely to affect all workers, it could mean that labour market discrimination is present. 
+
+\subsection{Females}
+\label{sec:females_explained}
+For females, we have already noted that the picture is \hyperref[sec:results]{starkly different}. Chinese, Asian and mixed race women tend to have higher wages because they work in higher paying occupations (hotels/restaurants, education and health - see \hyperref[sec:appendixB]{Appendix B}) than White women, and have higher levels of education. Black women, on the other hand, tend to have higher wages because they work in regions which are associated with higher pay (which itself could be a product of structural discrimination causing regional clustering). Although, this positive wage differential is attenuated somewhat by having varying numbers of years in the UK. This is evidence of differing labour market outcomes for native and non-native workers, which was detailed in \ref{sec:Setup}. Note that differences in marital status and the number children do not explain any of the wage gap, either to inflate or reduce it. This is increases the reliability of female analysis, as differing labour market histories regarding maternal/paternal leave do not seem to be affecting the pay of different ethnicities in a significant way. Thus the concerns of Section \ref{sec:Labour Market Outcomes} regarding the bias of the \enquote{unexplained} portion of the wage gap are likely to be minimal, if anything.
+
+\begin{figure}[]
+\centering
+    \title{Explained Portion of Female Wage Differential}
+    \import{graphs/}{explained_female_stacked}
+    \caption{The portion of the log wage gap which is \enquote{explained} for males, by ethnic group}
+    \label{fig:explained_female_stacked}
+\end{figure}
+
+\section{Trends Across Time}
+\label{sec:time_trends}
+Literature surrounding ethnic pay gaps rarely explores the trends across time. The large sample considered in this paper therefore allows for a detailed analysis of how pay gaps have changed over time. Raw pay gaps were already discussed in Section \ref{sec:Wages}, but it would be beneficial to explore how much of this has historically been due to \enquote{unexplained} factors, which is likely to be due to pay discrimination, at least in part. Blinder-Oaxaca decompositions have been conducted for each year of the sample, where possible, by ethnicity and gender. In some cases this was not possible, in part due to small sample sizes.
+
+Figure \ref{fig:unexplained_male_line} shows how, for males, there an \enquote{unexplained} component of the wage gap for almost the whole sample range. This appears to be relatively stationary, with, if anything, a slight increase in the magnitude of the \enquote{unexplained} component for Black workers, and a slight decrease for Asian workers. However, due to this being a highly granular analysis, it is difficult to say with certainty. Mixed race workers seem to have experienced an erosion in the positive \enquote{unexplained} component of the wage gap which was experienced for much of the past decade. Between 2009 and 2012, all three ethnicities saw the unexplained wage gap fall or become increasingly negative; this is possible evidence of discrimination, but difficult to say for certainty given the somewhat volatile nature of the results.
+
+\begin{figure}[h]
+\centering
+    \title{Male Unexplained Wage Differential}
+    \import{graphs/}{unexplained_male_line}
+    \caption{The portion of the male wage gap which is unexplained, over time}
+    \label{fig:unexplained_male_line}
+\end{figure}
+
+When the \enquote{unexplained} female wage gap is considered, a different picture emerges. Figure \ref{fig:unexplained_female_line} is consistent with the findings in Section \ref{sec:Females}, with just Asian females experiencing an unexplained differences in earnings in almost every year. Mixed race females seemed to suffer disproportionately in the wake of the financial crisis, from 2009 to 2011, which recovered during the middle of the decade, but became increasingly negative towards the end of the sample. As noted previously, this may be due to discrimination.
+\begin{figure}[h]
+\centering
+    \title{Female Unexplained Wage Differential}
+    \import{graphs/}{unexplained_female_line}
+    \caption{The portion of the female wage gap which is unexplained, over time}
+    \label{fig:unexplained_female_line}
+\end{figure}
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+
+
+\textcolor{red}{FEs - why we can't do fixed effects due to many time-invariant variables, leadng to significant bias \citep{Heitmueller}. Convert log pay gaps into £ ones. Unexplained gaps also incorporate unobserved perceived benefits of working in a particular low-paid job.
+Mention how part time work explains some of the gap - and link this to the summary stats at the start about how more likely to be working part time. Same with married too.
+Unexplained component is an upper bound for discrimination, as can include any unobservables.Although not if industry/occupation is endogenous
+Same or different conclusions to \citep{Longhi2} - see the exec summary, as they had men/women of all groups being paid less.
+Also compare findings to \citep{Shields} and \citep{ONSe}. Compare the coeffs for each regression, perhaps Whites have a higher return to potential education? This could cause the endogeniety of education, and make it rational for minorities to invest in education less.}
+
+
+\ifstandalone
+\bibliography{essaybib}
+\fi
+\end{document}

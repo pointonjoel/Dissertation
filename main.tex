@@ -1,0 +1,82 @@
+\documentclass[openany,a4paper,12pt]{book}
+%\documentclass[]{book}
+\usepackage{import}
+\usepackage{preamble}
+\doublespacing
+
+\usepackage{makeidx}
+\makeindex
+
+\begin{document}
+
+\pagestyle{headings}
+\pagestyle{fancy}
+%\fancyhead[R,C, L]{}
+%\fancyhead[R]{\textbf{Research Outline and Draft Chapter}}
+\fancyfoot[L]{Joel Pointon}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{EC541}
+\fancypagestyle{alim}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[L]{Joel Pointon}\fancyfoot[R]{\thepage}\fancyfoot[C]{EC541}}
+
+\frontmatter
+\import{./}{title.tex}
+\clearpage
+\textcolor{red}{\textbf{Declaration thing.}}
+%\thispagestyle{empty}
+\import{}{abstract_thanks}
+\tableofcontents
+
+\newpage
+\thispagestyle{empty}
+\listoftables
+\listoffigures
+
+%\newpage
+
+
+\mainmatter %8632 - trim to 8000?
+
+\chapter{Introduction and Theory} %2466 words
+\import{sections/}{intro} %447, aim for 600
+\import{sections/}{theory} %956
+\import{sections/}{lit_review} %1061
+
+%\chapter{Research Outline}
+%\label{sec:research_outline}
+%\import{sections/}{research_outline}
+
+\chapter{Dataset} %2441
+\label{sec:Dataset}
+\import{sections/}{data}
+
+\chapter{Analysis} %2568
+\label{sec:Analysis}
+\import{sections/}{results}
+
+\chapter{Conclusions and Limitations} %1157 %probably 1000
+\import{sections/}{limitations} %250 + 250 for future research
+\import{sections/}{conclusion} %300 aim for 600
+\addcontentsline{toc}{section}{Bibliography} %640
+\label{sec:Bibliography}
+\bibliography{essaybib} %68
+
+\label{sec:appendices}
+\chapter{Appendices}
+\import{sections/}{appendixA}
+\newpage
+\import{sections/}{appendixB}
+\newpage
+\import{sections/}{appendixC}
+\newpage
+\import{sections/}{appendixD}
+
+%\chapter{Conclusion chapter}
+%\include{sections/conclusion}
+
+\backmatter
+
+%\import{./}{bibliography.tex}
+
+%\section{Glossary}
+\printglossary[type=\acronymtype, nonumberlist]
+\end{document}

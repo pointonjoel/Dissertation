@@ -1,0 +1,55 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{pdfpages}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\begin{document}
+\pgfplotsset{compat=1.8}
+\pgfplotstableread{ % Read the data into a table macro
+Year	Black	Asian	Mixed
+1997	-0.08	-0.06	-0.04
+1998	0   	-0.04	 
+1999	-0.03	-0.07	 
+2000	-0.03	-0.07	 
+2001	-0.02	-0.08	 
+2002	-0.06	-0.06	 
+2003	-0.11	-0.11	 
+2004	-0.02	-0.06	 
+2005	-0.06	-0.05	 
+2006	0	    -0.04	 
+2007	-0.06	-0.06	-0.05
+2008	-0.05	-0.09	0.07
+2009	0   	-0.02	0.05
+2010	-0.09	-0.07	0.04
+2011	-0.03	-0.03	 
+2012	-0.1	-0.11	0.02
+2013	-0.05	-0.11	0.06
+2014	-0.05	-0.08	-0.05
+2015	-0.05	-0.06	-0.03
+2016	-0.09	-0.05	0.11
+2017	-0.05	-0.06	0.02
+2018	-0.1	-0.02	-0.01
+2019	-0.06	-0.04	-0.11
+}\testdata
+
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+              % Stacked horizontal bars
+            %ytick=data,     % Use as many tick labels as y coordinates
+            %legend pos=south east,
+            %xticklabels from table={\testdata}{Year},  % Get the labels from the Label column of the \datatable
+            legend style={at={(0.5,-0.2)},anchor=north},
+            xticklabel style={/pgf/number format/set thousands separator={}},
+            ylabel = Unexplained Pay Gap (log £),
+            xlabel = Year,
+            xmajorgrids=true
+]
+\addplot [color=blue, thick] table [y=Black,x=Year] {\testdata};
+\addplot [color=black, thick] table [y=Asian,x=Year] {\testdata};
+\addplot [color=red, thick] table [y=Mixed,x=Year] {\testdata};
+\legend{Black,Asian,Mixed}
+\end{axis}
+\end{tikzpicture}
+\end{document}

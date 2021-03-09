@@ -1,0 +1,23 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{pdfpages}
+\begin{document}
+\section{Appendix B}
+\label{sec:appendixB}
+Table \ref{tab:2D_industries} contains the number of individuals working in each 2-digit SIC code, by ethnic group. Note that there are some cells with 0 or very few individuals in minority ethnic groups working said industry, despite a large number of white individuals. Typically these SIC codes correspond to the A:B or C:E sections 1-digit SIC codes, as outlined in Tables \ref{tab:1D_industries_male} and \ref{tab:1D_industries_female}. 
+\setstretch{1.25}
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm}
+\import{tables/}{2D_industries}
+\restoregeometry
+\import{tables/}{1D_industries_male}
+\import{tables/}{1D_industries_female}
+\import{tables/}{occup_male} %mention this!
+\import{tables/}{occup_female} %and this!
+\setstretch{2}
+
+\ifstandalone
+\bibliography{essaybib}
+\fi
+\end{document}

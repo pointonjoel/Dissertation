@@ -1,0 +1,28 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{pdfpages}
+\begin{document}
+\section{Limitations}
+\label{sec:limitations}
+As with all research, there are a number of limitations to the analysis. Firstly, household identification data was only included in the \acrlong{lfs} from 2001. All analysis up until this point has not used clustered standard errors, to prevent the loss of 1997-2001 data. \hyperref[sec:appendixA]{Appendix D} contains decomposition summaries for 2001 through to 2019 inclusive. 
+
+Allowing for clusters of households has no affect on the statistical significance of any variables, with standard errors only rising by small amounts. As can be seen from the Tables \ref{tab:oaxaca_male_nonclustered}, \ref{tab:oaxaca_male_clustered},  \ref{tab:oaxaca_female_nonclustered}, and \ref{tab:oaxaca_female_clustered} in \hyperref[sec:appendixD]{Appendix D}, there is only a minimal effect on the standard errors. The statistical significance of the decompositions (both the explained and unexplained) is not affected. This is likely due to the very large sample size used in this paper. Therefore it is reasonable to conclude that the non-clustered analysis on the \acrshort{lfs} data thus far is still reliable. It is assumed that clustered standard errors for the whole sample range (1995 through to 2020 inclusive) would not affect the results in a meaningful way, if the data were to be available.
+
+Secondly, a large proportion of Chinese workers (and some other ethnic minorities) had \enquote*{other qualifications} as their highest NVQ level. As such, to prevent the loss of the minority sample, any ethnicity selecting this was coded to NVQ level 2. This mainly affects the Asian analysis, but only in a minimal way. Under 15\% of Asian workers reported this, with even less for other minorities.
+
+\textcolor{red}{Anything else to add here?? It seems a bit disjointed.}
+
+\section{Future Research}
+\label{sec:Future Research}
+The discontinuity of variables makes it very difficult to analyse earlier years, in the 1992-1994 region and prior. More effort needs to be put into making data consistent, converting variables into the same format. 2-digit 1992 SIC codes were used along with 1-digit SOC codes, because the changes in occupation codes at this level of data were too substantial to be used. Work to make (\acrshort{lfs}) data more consistent will assist future researchers.
+
+A lack of religious beliefs prior to 2002 meant that religion was not an explanatory variable in this paper. It would be valuable for future research to explore this impact on the decomposition results, similar the work done by \citet{Longhi}. Additionally, future research focusing on the impact of mental health and other non-physical disabilities, which may have important confounding factors, is becoming increasingly important. \citep{Longhi} also shows how activity-limiting mental conditions severely reduce the probability of being in employment, meaning that research into the pay gap is important.
+
+Finally, this paper has not directly considered the experiences between minorities (the Black vs Chinese experience), nor the heterogenerous experiences within minorities, particularly at the ends of the income distribution. Whilst the raw median pay was detailed in Section \ref{sec:Wages}, decomposing the wage gap at different parts of the distribution this will be important in more accurately determining which policies can be used to improve labour market outcomes, and evaluating the impact of recent policy.
+
+\ifstandalone
+\bibliography{essaybib}
+\fi
+\end{document}

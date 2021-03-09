@@ -1,0 +1,23 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{pdfpages}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+	symbolic x coords={16-17b, 18-21, 22-29, 30-39, 40-49, 50-59, 60+},
+	xlabel = Age bracket,
+	ylabel = Gross median hourly wage in 2020 (£),
+	legend style={at={(1.1,0.5)},anchor=west}]
+\addplot coordinates {(16-17b,5) (18-21,9.21) (22-29,12.99) (30-39,16.25) (40-49,18.43) (50-59,17.04) (60+,14.45)};
+\addlegendentry{Male FT}
+\addplot coordinates {(16-17b,6.2) (18-21,9.06) (22-29,12.82) (30-39,16.13) (40-49,16.29) (50-59,14.77) (60+,12.53)};
+\addlegendentry{Female FT}
+\addplot coordinates {(16-17b,6.93) (18-21,8.9) (22-29,9.92) (30-39,10.88) (40-49,11.51) (50-59,11.52) (60+,11.47)};
+\addlegendentry{Male PT}
+\addplot coordinates {(16-17b,6.51) (18-21,8.97) (22-29,9.81) (30-39,11.12) (40-49,11.23) (50-59,10.73) (60+,10.38)};
+\addlegendentry{Female PT}
+	\end{axis}
+\end{tikzpicture}
+\end{document}

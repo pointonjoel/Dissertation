@@ -1,0 +1,26 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Oaxaca Decompositions for Females\label{tab1}}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{White}&\multicolumn{1}{c}{Black}&\multicolumn{1}{c}{Chinese}&\multicolumn{1}{c}{Asian}&\multicolumn{1}{c}{Mixed}\\
+\hline
+overall     &                     &                     &                     &                     &                     \\
+group\_1     &       5.561\sym{***}&       5.366\sym{***}&       5.366\sym{***}&       5.366\sym{***}&       5.366\sym{***}\\
+            &    (971.87)         &   (3576.64)         &   (3576.64)         &   (3576.64)         &   (3576.64)         \\
+group\_2     &       5.366\sym{***}&       5.593\sym{***}&       5.627\sym{***}&       5.534\sym{***}&       5.557\sym{***}\\
+            &   (3576.64)         &    (611.84)         &    (204.69)         &    (674.71)         &    (304.85)         \\
+difference  &       0.195\sym{***}&      -0.227\sym{***}&      -0.260\sym{***}&      -0.168\sym{***}&      -0.190\sym{***}\\
+            &     (32.92)         &    (-24.49)         &     (-9.45)         &    (-20.13)         &    (-10.41)         \\
+explained   &       0.119\sym{***}&     -0.0558\sym{***}&      -0.224\sym{***}&      -0.146\sym{***}&      -0.130\sym{***}\\
+            &     (23.55)         &     (-7.02)         &    (-10.42)         &    (-21.27)         &     (-9.00)         \\
+unexplained &      0.0762\sym{***}&      -0.171\sym{***}&     -0.0363\sym{*}  &     -0.0219\sym{***}&     -0.0610\sym{***}\\
+            &     (16.96)         &    (-24.42)         &     (-1.99)         &     (-3.58)         &     (-5.05)         \\
+\hline
+\(N\)       &      371795         &      357049         &      351245         &      361065         &      352466         \\
+\hline\hline
+\multicolumn{6}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\label{tab:oaxaca_female_summary}
+\end{table}

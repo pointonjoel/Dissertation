@@ -1,0 +1,66 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Regression table\label{tab1}}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+            &\multicolumn{1}{c}{Oaxaca 1}&\multicolumn{1}{c}{Oaxaca 2}&\multicolumn{1}{c}{Oaxaca 3}\\
+\hline
+overall     &                     &                     &                     \\
+group\_1     &       5.732\sym{***}&       5.699\sym{***}&       5.699\sym{***}\\
+            &   (1387.55)         &   (5292.96)         &   (5346.87)         \\
+[1em]
+group\_2     &       5.697\sym{***}&       5.723\sym{***}&       5.786\sym{***}\\
+            &   (5171.52)         &    (828.46)         &    (276.50)         \\
+[1em]
+difference  &      0.0351\sym{***}&     -0.0241\sym{***}&     -0.0863\sym{***}\\
+            &      (8.20)         &     (-3.45)         &     (-4.12)         \\
+[1em]
+endowments  &     -0.0706\sym{***}&       0.209\sym{***}&       0.216\sym{***}\\
+            &    (-47.64)         &     (29.06)         &      (7.33)         \\
+[1em]
+coefficients&       0.233\sym{***}&      -0.133\sym{***}&      -0.138\sym{***}\\
+            &     (37.58)         &    (-19.34)         &     (-6.71)         \\
+[1em]
+interaction &      -0.127\sym{***}&      -0.101\sym{***}&      -0.164\sym{***}\\
+            &    (-26.39)         &    (-14.21)         &     (-5.60)         \\
+\hline
+endowments  &                     &                     &                     \\
+married     &     -0.0205\sym{***}&      0.0619\sym{***}&      0.0115\sym{**} \\
+            &    (-24.62)         &     (20.58)         &      (3.10)         \\
+[1em]
+numchu16    &     -0.0120\sym{***}&      0.0123\sym{***}&    -0.00311         \\
+            &    (-30.78)         &      (7.27)         &     (-1.75)         \\
+[1em]
+UKyrs       &     -0.0381\sym{***}&       0.135\sym{***}&       0.207\sym{***}\\
+            &    (-29.10)         &     (21.19)         &      (7.09)         \\
+\hline
+coefficients&                     &                     &                     \\
+married     &      0.0231\sym{***}&     0.00454         &     0.00475         \\
+            &      (3.61)         &      (0.62)         &      (0.16)         \\
+[1em]
+numchu16    &     -0.0265\sym{***}&    -0.00119         &    -0.00173         \\
+            &    (-10.75)         &     (-0.21)         &     (-0.14)         \\
+[1em]
+UKyrs       &       0.279\sym{***}&      -0.179\sym{***}&      -0.174\sym{***}\\
+            &     (24.23)         &    (-16.15)         &     (-5.60)         \\
+[1em]
+\_cons      &     -0.0432\sym{***}&      0.0428\sym{**} &      0.0323         \\
+            &     (-4.22)         &      (2.70)         &      (0.70)         \\
+\hline
+interaction &                     &                     &                     \\
+married     &    -0.00199\sym{***}&     0.00164         &    0.000250         \\
+            &     (-3.58)         &      (0.62)         &      (0.16)         \\
+[1em]
+numchu16    &     -0.0110\sym{***}&    0.000347         &   -0.000209         \\
+            &    (-10.47)         &      (0.21)         &     (-0.14)         \\
+[1em]
+UKyrs       &      -0.114\sym{***}&      -0.103\sym{***}&      -0.164\sym{***}\\
+            &    (-24.09)         &    (-16.01)         &     (-5.60)         \\
+\hline
+\(N\)       &      660306         &      660306         &      660306         \\
+\hline\hline
+\multicolumn{4}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

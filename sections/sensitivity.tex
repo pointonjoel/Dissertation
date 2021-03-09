@@ -1,0 +1,16 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{pdfpages}
+\begin{document}
+\section{Sensitivity Analysis}
+\label{sec:sensitivity}
+The \acrshort{lfs} only began including household identifiers from the third quarter of 2001. In order to not lose a third of the sample, analysis was conducted without allowing for clusters. It follows that analysis should be conducted on the rest of the sample in order to identify if the statistical significance of decompositions are affected, given that clustering will only inflate the standard errors, if anything.
+
+
+
+\ifstandalone
+\bibliography{essaybib}
+\fi
+\end{document}

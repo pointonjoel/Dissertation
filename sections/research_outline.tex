@@ -1,0 +1,40 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage{preamble}
+\usepackage{pdfpages}
+\begin{document}
+\section{Motivation}
+The literature surrounding labour markets and wage gaps has historically focused on gender. Given the COVID-19 pandemic, in which existing inequalities are likely to be amplified (ethnic inequalities in particular), new research into this topic is valuable. Racism has become a more widely discussed topic over the past year, and informed discussion through rigorous research is needed.
+
+Understanding why individuals of varying ethnicities get paid different amounts can help policymakers to shape their response to the current economic shock. If, for example, one ethnicity typically receives a lower wage \textit{ceteris paribus} due to having lower education levels, this requires a different policy prescription to wage gaps caused by one ethnicity typically having more children, for example. In addition to this, breaking down the wage gap into 'explained' and 'unexplained' parts enables policymakers to distinguish between how much of the wage gap is due to outright discrimination.
+
+\section{Data}
+In order to conduct my research I will be using a mix of the UK's \acrlong{lfs} (\acrshort{lfs}) and potentially the \acrlong{bhps} (\acrshort{bhps}). I am using the \acrshort{lfs} as a pooled cross-sectional dataset where each data point is a unique individual. For those in 1994-1996, only participants in wave 5 are kept, which is when wage data is surveyed. For 1996 onwards, participants are asked wage data in both waves one and five. However, given that wages are unlikely to change significantly in four quarters, I have chosen to only include wave one, to prevent serial-correlation from clustering and minimal variation in the wage variable. Summary statistics of the cleaned data is included below.
+\setstretch{1.25}
+\import{tables/}{sumstats}
+\setstretch{2}
+
+\section{Planned Methodology}
+My dissertation will explore the ethnic wage gap and how it has evolved over time. The aim is to decompose the pay gap into 'explained' and 'unexplained' elements, for each ethnicity. The research will provide a unique insight into why different ethnicities receive different pay. I will also explore the outcomes for males and females, given the existing research on the differing labour outcomes for different genders \citep{BoE}.
+
+Most of the analysis will cover 1994 until 2020 inclusive. Quarters three and four of 2020 will be added once they are available. The reason for this time-frame is twofold. Firstly, and practically, many of the variables prior to 1994 are either significantly different or are missing key information. For example, 70\% of participants in 1993 are missing education information and key wage data is missing in 1992. In addition to this, the recession of the early 1990s will not affect the sample. 
+
+A notable issue from using the \acrlong{lfs} is that it surveys households, creating an element of clustering. Furthermore, a raw household unique identifier is only included in Stata datasets from 2001-Q3 onwards. Consequently, I shall conduct my research without clustering, in order to keep 1994-2000 within the analysis. A section of my dissertation will then be dedicated to 'sensitivity analysis' to assess whether there is a significant impact on any conclusions.
+
+\section{Potential Challenges}
+There are five main challenges. Firstly, I will need to control for bias surrounding missing data. Some wage data is inevitably not given for individuals which are unemployed, and I may need to control for this sample selection bias, using the procedure outlined in \cite{Heckmana, Heckmanb}. Stata's Oaxaca package can accommodate this easily.
+
+Secondly, I will need to control for the endogeneity of wage determining characteristics, such as job-selection. Adapting the \acrshort{lfs} as a pseudo cross-sectional dataset will help overcome this.
+
+Thirdly, using industry 1-digit \acrshort{sic} codes is relatively narrow compared to the 2-digit \acrshort{sic} codes which are available. However, there are many 2-digit \acrshort{sic} codes where there are few or zero non-White individuals (\hyperref[sec:appendix B]{Appendix B}). As a result, I will need to use a combination of 1- and 2-digit \acrshort{sic} codes, depending on whether there is an adequate sample size for each ethnicity.
+
+In a related manner, the fourth challenge is the small sample of Chinese individuals. Consequently, preliminary decompositions are often unable to find a statistically significant result. Whilst this may be accurate, it may be because there is an insufficient sample size. It may be beneficial to merge the Chinese with Asian (other) dummies.
+
+The final challenge is the scope of the question. Decomposing the wage gap per ethnicity across time for each gender opens up many possibilities. I will need to discuss my preliminary findings with my supervisor in order to determine the most interesting points and consequently refine my dissertation question.
+
+\textbf{Word count:} 763 words
+\ifstandalone
+\bibliography{essaybib}
+\fi
+\end{document}
