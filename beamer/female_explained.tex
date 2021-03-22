@@ -3,7 +3,7 @@
 %        compat=newest,  % <-- does not work; don't know why
         compat=1.13,     % <-- works as expected
     }
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=0.7]
   %\node [align=center, font=\small, rotate=45,text width=2.15cm, inner sep=0.25cm] at (1, 1) {\textsc{year 1}};
   \begin{axis}[
     title={Explained Decomposition Components for Females},
@@ -15,11 +15,10 @@
     bar width=8mm,
     %xtick={1,2,3,4,5},
     %xticklabels={White, Black, Chinese, Asian, Mixed}
-    symbolic x coords={White, Black, Chinese, Asian, Mixed},
+    symbolic x coords={non-White, Black, Chinese, Asian, Mixed},
     xtick=data,
     nodes near coords align={anchor=north},%Move values in bar
-    every node near coord/.style={},
-    legend style={at={(1.1,0.5)},anchor=west}
+    every node near coord/.style={}
   ]
 %married
 \addplot [fill=blue] coordinates {({non-White},-0.0045978)({Black},-0.0123878)({Chinese},-0.0005473)({Asian},0.0004552)({Mixed},-0.0095788)};
@@ -55,7 +54,6 @@
 %\begin{comment}
 %\end{comment}
 %\filldraw[black] (0,0) circle (2pt) node[anchor=west] {Intersection point};
-  \legend{married, children, UKyrs, exp\_ten, public, u25, region, disability, pt, educ, occup\_ind, time, total}
   \end{axis}
   
   \begin{axis}[
