@@ -19,7 +19,7 @@ Year	White	    Black   	Chinese 	Asian   	Mixed
 2004	11.79762	11.35361	11.92805	11.2635	    10.96314
 2005	12.0338 	12.15564	11.94671	11.30122	12.66021
 2006	12.06245	11.93412	12.3191 	11.31746	11.70956
-2007	12.30566	11.66509	11.8572	    11.2268 	11.36166
+2007	12.30566	11.66509	11.8572	    11.2268	    11.36166
 2008	12.29647	12.7455 	12.08922	11.16238	12.19235
 2009	12.49616	11.64799	12.89581	11.92712	12.74505
 2010	12.47866	12.27534	12.10358	11.23374	13.43224
@@ -32,6 +32,7 @@ Year	White	    Black   	Chinese 	Asian   	Mixed
 2017	12.53816	12.01972	15.17572	11.60661	12.28039
 2018	12.79216	11.93935	15.75994	12.37726	12.30606
 2019	13.12951	12.20254	14.72751	13.3937	    12.29806
+
 }\testdata
 
 \begin{tikzpicture}[scale=0.8]
@@ -40,7 +41,7 @@ Year	White	    Black   	Chinese 	Asian   	Mixed
             %ytick=data,     % Use as many tick labels as y coordinates
             %legend pos=south east,
             %xticklabels from table={\testdata}{Year},  % Get the labels from the Label column of the \datatable
-            legend style={at={(1.1,0.5)},anchor=east},
+            legend style={at={(1.1,0.5)},anchor=west},
             xticklabel style={/pgf/number format/set thousands separator={}},
             ylabel = Hourly Wage (£),
             xlabel = Year,
