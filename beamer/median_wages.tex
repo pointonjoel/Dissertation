@@ -1,0 +1,52 @@
+\pgfplotsset{compat=1.8}
+\pgfplotstableread{ % Read the data into a table macro
+Year	White	    Black   	Chinese 	Asian   	Mixed
+1997	9.874187	9.949287	11.11375	8.922032	10.10526
+1998	9.982364	10.30226	10.45517	8.827146	10.23116
+1999	10.80668	11.27601	12.18353	9.992188	11.2601
+2000	10.9367	    11.19534	10.31034	10.16078	11.13488
+2001	11.44536	11.47204	10.21632	10.80011	10.40715
+2002	11.62672	11.97042	11.10685	10.79012	10.80103
+2003	11.57665	11.51049	10.79256	10.65051	11.33585
+2004	11.79762	11.35361	11.92805	11.2635	    10.96314
+2005	12.0338 	12.15564	11.94671	11.30122	12.66021
+2006	12.06245	11.93412	12.3191 	11.31746	11.70956
+2007	12.30566	11.66509	11.8572	    11.2268 	11.36166
+2008	12.29647	12.7455 	12.08922	11.16238	12.19235
+2009	12.49616	11.64799	12.89581	11.92712	12.74505
+2010	12.47866	12.27534	12.10358	11.23374	13.43224
+2011	12.36828	12.05655	13.78771	11.48275	12.51865
+2012	12.49763	12.29972	13.06159	11.37806	12.39508
+2013	12.47292	11.22563	14.36986	11.11448	13.88719
+2014	12.61616	11.29198	12.94179	11.38079	12.7237
+2015	12.63561	11.54994	15.09995	11.23136	13.17125
+2016	12.65586	11.51842	15.69747	12.17304	14.22176
+2017	12.53816	12.01972	15.17572	11.60661	12.28039
+2018	12.79216	11.93935	15.75994	12.37726	12.30606
+2019	13.12951	12.20254	14.72751	13.3937	    12.29806
+}\testdata
+
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+              % Stacked horizontal bars
+            %ytick=data,     % Use as many tick labels as y coordinates
+            %legend pos=south east,
+            %xticklabels from table={\testdata}{Year},  % Get the labels from the Label column of the \datatable
+            legend style={at={(1.4,0.5)},anchor=east},
+            xticklabel style={/pgf/number format/set thousands separator={}},
+            ylabel = Hourly Wage (£),
+            xlabel = Year,
+            xmajorgrids=true
+]
+\addplot [color=red, thick] table [y=White,x=Year] {\testdata};   % "First" column against the data index
+\addlegendentry{White}
+\addplot [color=blue, thick] table [y=Black,x=Year] {\testdata};
+\addlegendentry{Black}
+\addplot [color=green, thick] table [y=Chinese,x=Year] {\testdata};
+\addlegendentry{Chinese}
+\addplot [color=black, thick] table [y=Asian,x=Year] {\testdata};
+\addlegendentry{Asian}
+\addplot [color=orange, thick] table [y=Mixed,x=Year] {\testdata};
+\addlegendentry{Mixed}
+\end{axis}
+\end{tikzpicture}

@@ -34,13 +34,13 @@
 %\newpage
 
 
-\mainmatter %8632 - trim to 8000?
+\mainmatter %9000 - trim to 8000?
 
 \chapter{Introduction and Theory} %2466 words
 \import{sections/}{intro} %447, aim for 600
 \import{sections/}{theory} %956
 \import{sections/}{lit_review} %1061
-
+%\begin{comment}
 %\chapter{Research Outline}
 %\label{sec:research_outline}
 %\import{sections/}{research_outline}
@@ -49,11 +49,13 @@
 \label{sec:Dataset}
 \import{sections/}{data}
 
-\chapter{Analysis} %2568
+\chapter{Analysis} %3000
 \label{sec:Analysis}
-\import{sections/}{results}
+\import{sections/}{results} %2568
+\import{sections/}{endogeneity} %326
 
 \chapter{Conclusions and Limitations} %1157 %probably 1000
+\label{sec:Limitations}
 \import{sections/}{limitations} %250 + 250 for future research
 \import{sections/}{conclusion} %300 aim for 600
 \addcontentsline{toc}{section}{Bibliography} %640
@@ -70,13 +72,10 @@
 \newpage
 \import{sections/}{appendixD}
 
-%\chapter{Conclusion chapter}
-%\include{sections/conclusion}
-
 \backmatter
 
-%\import{./}{bibliography.tex}
 
 %\section{Glossary}
 \printglossary[type=\acronymtype, nonumberlist]
+%\end{comment}
 \end{document}

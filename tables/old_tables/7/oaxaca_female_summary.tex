@@ -1,0 +1,27 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Oaxaca Decompositions for Females\label{tab1}}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+            &\multicolumn{1}{c}{Non-White}&\multicolumn{1}{c}{Black}&\multicolumn{1}{c}{Chinese}&\multicolumn{1}{c}{Asian}&\multicolumn{1}{c}{Mixed}\\
+\hline
+overall     &                     &                     &                     &                     &                     \\
+group\_1     &       2.468\sym{***}&       2.482\sym{***}&       2.523\sym{***}&       2.450\sym{***}&       2.483\sym{***}\\
+            &    (592.91)         &    (355.86)         &    (119.28)         &    (398.76)         &    (189.46)         \\
+group\_2     &       2.416\sym{***}&       2.416\sym{***}&       2.416\sym{***}&       2.416\sym{***}&       2.416\sym{***}\\
+            &   (2120.71)         &   (2120.71)         &   (2120.71)         &   (2120.71)         &   (2120.71)         \\
+difference  &      0.0517\sym{***}&      0.0663\sym{***}&       0.107\sym{***}&      0.0337\sym{***}&      0.0673\sym{***}\\
+            &     (11.98)         &      (9.38)         &      (5.07)         &      (5.39)         &      (5.12)         \\
+explained   &      0.0679\sym{***}&      0.0682\sym{***}&      0.0882\sym{***}&      0.0715\sym{***}&      0.0601\sym{***}\\
+            &     (18.86)         &     (11.60)         &      (6.06)         &     (14.71)         &      (6.09)         \\
+unexplained &     -0.0163\sym{***}&    -0.00188         &      0.0192         &     -0.0378\sym{***}&     0.00725         \\
+            &     (-4.46)         &     (-0.32)         &      (1.23)         &     (-7.69)         &      (0.77)         \\
+\hline
+\(N\)       &      277684         &      264414         &      259792         &      267796         &      260773         \\
+\hline\hline
+\multicolumn{6}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\label{tab:oaxaca_female_summary}
+\end{table}
