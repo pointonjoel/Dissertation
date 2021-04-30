@@ -7,6 +7,7 @@
 \usepackage{hyperref} %to hyperlink things
 \usepackage{import} %to import code
 \usepackage{fancyhdr} %fancyhdr
+\usepackage[labelfont=bf]{caption} % for bold figure numbers
 \usepackage{subcaption} %to use \subfigure
 \usepackage{graphicx} %to use \includegraphics
 \usepackage{amssymb} %to get a tick/checkmark
@@ -25,7 +26,6 @@
 \usepackage{csquotes} %puts " " marks in properly
 \usepackage{abstract} %for the abstract
 \usepackage[dvipsnames]{xcolor} %nice colours
-\usepackage{import}
 \usepackage{pdfpages}
 \usepackage{pgfplots} %for tikz stuff
 \usepackage{pgfplotstable} %not sure but related to tikz/pgf
@@ -48,12 +48,17 @@
 \renewcommand{\sectionmark}[1]{\markright{#1}{}}
 \fancyhf{}
 \fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\textbf{\textit{\nouppercase{\leftmark}}}}
-\fancyhead[LO]{\textbf{\textit{\nouppercase{\rightmark}}}}
+\fancyhead[L]{\textbf{\textit{\nouppercase{\leftmark}}}}
+\fancyhead[R]{\textbf{\textit{\nouppercase{\rightmark}}}}
 \fancypagestyle{plain}{ %
 \fancyhf{} % remove everything
 \renewcommand{\headrulewidth}{0pt} % remove lines as well
 \renewcommand{\footrulewidth}{0pt}}
+
+\fancypagestyle{plain}{% % <-- this is new
+  \fancyhf{} 
+  \fancyfoot[R]{\thepage} % same placement as with page style "fancy"
+  \renewcommand{\headrulewidth}{0pt}}
 
 %makes available the commands \proof, \qedsymbol and \theoremstyle
 \usepackage{amsthm}
@@ -124,5 +129,6 @@
 \newacronym{aps}{APS}{Annual Population Survey}
 \newacronym{sic}{SIC}{Standard Industrial Classification}
 \newacronym{mrp}{MRP}{Marginal Revenue Product}
+\newacronym{uk}{UK}{United Kingdom}
 % \newacronym{l}{L}{Quantity (of labour)}
 % \newacronym{w}{W}{Wage}

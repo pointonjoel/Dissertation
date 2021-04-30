@@ -12,15 +12,15 @@
     }
   \begin{tikzpicture}
   %\node [align=center, font=\small, rotate=45,text width=2.15cm, inner sep=0.25cm] at (1, 1) {\textsc{year 1}};
-  \addplot[only marks,mark=*,mark size=3pt,black,
-         nodes near coords = \rotatebox{90}{{\pgfmathprintnumber[fixed zerofill,
-                                    precision=2]{\pgfplotspointmeta}}},
-        nodes near coords align={vertical},
-        point meta=y,
-        every node near coord/.append style={font=\small, yshift=0.25mm},
-        ]  coordinates {
-    (1,0.1) (2,-0.1) (3,1)
-};
+%   \addplot[only marks,mark=*,mark size=3pt,black,
+%          nodes near coords = \rotatebox{90}{{\pgfmathprintnumber[fixed zerofill,
+%                                     precision=2]{\pgfplotspointmeta}}},
+%         nodes near coords align={vertical},
+%         point meta=y,
+%         every node near coord/.append style={font=\small, yshift=0.25mm},
+%         ]  coordinates {
+%     (1,0.1) (2,-0.1) (3,1)
+% };
 %\fill [fill=red, fill opacity=0.1] (0,0) node[left]{} -- (0,3.5) node[below left] {} -- (8.4,3.5) node[below left] {} -- (8.4,0) node[below left] {};
 %\fill [fill=green, fill opacity=0.1] (0,3.5) node[left]{} -- (0,7.05) node[below left] {} -- (8.4,7.05) node[below left] {} -- (8.4,3.5) node[below left] {};
   \begin{axis}[
@@ -28,6 +28,7 @@
     ybar stacked,
     ymax=0.3,
     ymin=-0.3,
+    ylabel=Contribution to log wage relative to White males,
     ymajorgrids = true,
     xmajorgrids = true,
     bar width=8mm,
