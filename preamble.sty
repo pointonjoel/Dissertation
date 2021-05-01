@@ -30,6 +30,7 @@
 \usepackage{pgfplots} %for tikz stuff
 \usepackage{pgfplotstable} %not sure but related to tikz/pgf
 %\usepackage{wrapfig} %for wrapping text round figures
+\usepackage{makecell}
 
 %uni guidelines
 \usepackage[left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm]{geometry}
@@ -76,6 +77,14 @@
 %Corolary counter
 \newtheorem{corolary}{Corolary}[section]
 
+%For footnote without marker - thanks to https://tex.stackexchange.com/questions/30720/footnote-without-a-marker
+\newcommand\nmfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 %Commands for naturals, integers, topology, hull, Ball, Disc, Dimension, boundary and a few more
 \newcommand{\E}{{\mathcal{E}}}
 \newcommand{\F}{{\mathcal{F}}}
@@ -110,7 +119,7 @@
 \usepackage[acronym]{glossaries}
 \makeglossaries
 
-%Example glossary entry - don't think I need it
+%Example glossary entry - not needed
 \begin{comment}
 \newglossaryentry{intelprop}
 {
