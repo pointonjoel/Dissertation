@@ -1,6 +1,6 @@
 # Dissertation
 Stage 3 BSc dissertation at University of Kent, Canterbury.
 
-Please see the 'code' folder for the Stata do-files to be able to replicate my work.
+Please see the 'code' folder for the Stata do-files to be able to replicate my work. Data are available at: https://www.ukdataservice.ac.uk/get-data
 
 All other files enable the dissertation to compile.
