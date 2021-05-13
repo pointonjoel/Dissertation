@@ -4,7 +4,7 @@
 \usepackage{pgfplots} %to make graphs
 \usepackage{tikz} %to create tikz stuff
 \usepgfplotslibrary{fillbetween} %colour between lines
-\usepackage{hyperref} %to hyperlink things
+% \usepackage{hyperref} %to hyperlink things
 \usepackage{import} %to import code
 \usepackage{fancyhdr} %fancyhdr
 \usepackage[labelfont=bf]{caption} % for bold figure numbers
@@ -31,6 +31,11 @@
 \usepackage{pgfplotstable} %not sure but related to tikz/pgf
 %\usepackage{wrapfig} %for wrapping text round figures
 \usepackage{makecell}
+
+% at the end to make footnote hyperlinks work
+\usepackage[hang, flushmargin]{footmisc} %stops footnotes being indented
+\usepackage{hyperref} %hyperlinks
+\usepackage{footnotebackref}
 
 %uni guidelines
 \usepackage[left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm]{geometry}
